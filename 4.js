@@ -23,4 +23,19 @@
 Подсказка: Возможно, вам понадобится округление чисел и оператор %.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+/**
+ * Проверяет число, чтобы оно было целое
+ * @param {number} userNumber 
+ */
+function userNumberValidation(userNumber) {
+
+    if (!Number.isInteger(Number(userNumber))) {
+        throw Error("Неверное значение");
+    }  else {
+        ranksShow(parseInt(userNumber));
+    }
+}
+
+function ranksShow(userNumber){
+
+}

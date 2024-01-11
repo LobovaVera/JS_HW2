@@ -14,4 +14,30 @@
 число 32.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+
+// function dayInputValidation(date) {
+
+//     if (!Number.isInteger(Number(date))) {
+//         alert("Неверное значение");
+//     } else if (Number(date) <= 0 || Number(date) >= 32) {
+//         alert("Неверное значение");
+//     } else {
+//         decadeShow(parseInt(date));
+//     }
+
+// }
+
+// function decadeShow(date) {
+//     let decade;
+//     if (0 < date && date <= 10) {
+//         decade = "первую";
+//     } else if (10 < date && date <= 20) {
+//         decade = "вторую";
+//     } else if (20 < date && date <= 31) {
+//         decade = "третью";
+//     }
+//     alert(`Число ${date} попадает в ${decade} декаду месяца.`);
+// }
+
+// const dayNumber = prompt("Введите целое число в интервале [1, 32)");
+// dayInputValidation(dayNumber);
