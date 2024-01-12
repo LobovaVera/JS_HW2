@@ -25,17 +25,30 @@
 
 /**
  * Проверяет число, чтобы оно было целое
- * @param {number} userNumber 
+ * @param {number} userNumber
  */
 function userNumberValidation(userNumber) {
+  if (!Number.isInteger(Number(userNumber))) {
+    throw Error("Неверное значение");
+  } else {
+    ranksShow(parseInt(userNumber));
+  }
+}
+/**
+ * Функуция получает целое число и выводит разряды числа, а именно: количество сотен, десятков и единиц.
+ * @param {integer} userNumber 
+ */
+function ranksShow(userNumber) {
+  let userNumber2 = userNumber % 1e3;
 
-    if (!Number.isInteger(Number(userNumber))) {
-        throw Error("Неверное значение");
-    }  else {
-        ranksShow(parseInt(userNumber));
-    }
+  let hundreds = Math.trunc(userNumber2 / 100);
+  let tens = Math.trunc((userNumber2 % 100) / 10);
+  let units = userNumber2 % 10;
+
+  alert(
+    `В числе ${userNumber} количество сотен: ${hundreds}, десятков: ${tens}, единиц: ${units}`
+  );
 }
 
-function ranksShow(userNumber){
-
-}
+const userNumber = +prompt("Введите целое число");
+userNumberValidation(userNumber);
