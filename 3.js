@@ -14,30 +14,36 @@
 число 32.
 */
 
+/**
+ * Функция проверяет число, чтобы оно было целым в диапазоне от 1 до 31 вклю. Если проверка прошла успешно, запускает функцию decadeShow.
+ * @param {number} число от 1 до 31
+ */
+function dayInputValidation(date) {
 
-// function dayInputValidation(date) {
+    if (!Number.isInteger(Number(date))) {
+        alert("Неверное значение");
+    } else if (Number(date) <= 0 || Number(date) >= 32) {
+        alert("Неверное значение");
+    } else {
+        decadeShow(parseInt(date));
+    }
 
-//     if (!Number.isInteger(Number(date))) {
-//         alert("Неверное значение");
-//     } else if (Number(date) <= 0 || Number(date) >= 32) {
-//         alert("Неверное значение");
-//     } else {
-//         decadeShow(parseInt(date));
-//     }
+}
+ /**
+  * Функция принимает число от 1 до 31 (число месяца) включительно и выыодит строку с названием декады месяца, к которой принадлежит это число.
+  * @param {number} число от 1 до 31
+  */ 
+function decadeShow(date) {
+    let decade;
+    if (0 < date && date <= 10) {
+        decade = "первую";
+    } else if (10 < date && date <= 20) {
+        decade = "вторую";
+    } else if (20 < date && date <= 31) {
+        decade = "третью";
+    }
+    alert(`Число ${date} попадает в ${decade} декаду месяца.`);
+}
 
-// }
-
-// function decadeShow(date) {
-//     let decade;
-//     if (0 < date && date <= 10) {
-//         decade = "первую";
-//     } else if (10 < date && date <= 20) {
-//         decade = "вторую";
-//     } else if (20 < date && date <= 31) {
-//         decade = "третью";
-//     }
-//     alert(`Число ${date} попадает в ${decade} декаду месяца.`);
-// }
-
-// const dayNumber = prompt("Введите целое число в интервале [1, 32)");
-// dayInputValidation(dayNumber);
+const dayNumber = prompt("Введите целое число в интервале [1, 32)");
+dayInputValidation(dayNumber);

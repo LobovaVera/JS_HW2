@@ -12,19 +12,24 @@
 Если же пользователь где-то ввел неверное значение, то необходимо вывести 
 в консоль "Одно или более значений некорректно.".
 */
-// function inputValidation(num1, num2) {
+/**
+ * Функция проверяет, чтобы введеные данные - были именно числа, и первое число было больше или равно нулю, а второе меньше нуля.
+ * @param {number} num1 число больше или равно нулю
+ * @param {number} num2 отрицательное число
+ */
+function inputValidation(num1, num2) {
 
-//     if (Number.isNaN(+num1) || Number.isNaN(+num2)) {
-//         alert('Одно или более значений некорректно');
-//     } else if (num1.trim() === "" || num2.trim() === "") {
-//         alert('Одно или более значений некорректно');
-//     } else if (Number(num1) >= 0 && Number(num2) < 0) {
-//         alert('Все значения верные');
-//     }
-// }
+    if (Number.isNaN(+num1) || Number.isNaN(+num2)) {
+        alert('Одно или более значений некорректно');
+    } else if (num1.trim() === "" || num2.trim() === "") {
+        alert('Одно или более значений некорректно');
+    } else if (Number(num1) >= 0 && Number(num2) < 0) {
+        alert('Все значения верные');
+    }
+}
 
-// const positive = prompt('Введите положительное число: ');
-// const negative = prompt('Введите отрицательное число: ');
-// inputValidation(positive, negative);
+const positive = prompt('Введите положительное число: ');
+const negative = prompt('Введите отрицательное число: ');
+inputValidation(positive, negative);
 
 

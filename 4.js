@@ -25,7 +25,7 @@
 
 /**
  * Проверяет число, чтобы оно было целое
- * @param {number} userNumber
+ * @param {number} целое число
  */
 function userNumberValidation(userNumber) {
   if (!Number.isInteger(Number(userNumber))) {
@@ -36,7 +36,7 @@ function userNumberValidation(userNumber) {
 }
 /**
  * Функуция получает целое число и выводит разряды числа, а именно: количество сотен, десятков и единиц.
- * @param {integer} userNumber 
+ * @param {integer} целое число 
  */
 function ranksShow(userNumber) {
   let userNumber2 = userNumber % 1e3;
