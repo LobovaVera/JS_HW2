@@ -23,4 +23,32 @@
 Подсказка: Возможно, вам понадобится округление чисел и оператор %.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+/**
+ * Проверяет число, чтобы оно было целое
+ * @param {number} целое число
+ */
+function userNumberValidation(userNumber) {
+  if (!Number.isInteger(Number(userNumber))) {
+    throw Error("Неверное значение");
+  } else {
+    ranksShow(parseInt(userNumber));
+  }
+}
+/**
+ * Функуция получает целое число и выводит разряды числа, а именно: количество сотен, десятков и единиц.
+ * @param {integer} целое число 
+ */
+function ranksShow(userNumber) {
+  let userNumber2 = userNumber % 1e3;
+
+  let hundreds = Math.trunc(userNumber2 / 100);
+  let tens = Math.trunc((userNumber2 % 100) / 10);
+  let units = userNumber2 % 10;
+
+  alert(
+    `В числе ${userNumber} количество сотен: ${hundreds}, десятков: ${tens}, единиц: ${units}`
+  );
+}
+
+const userNumber = +prompt("Введите целое число");
+userNumberValidation(userNumber);
